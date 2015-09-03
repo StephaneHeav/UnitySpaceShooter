@@ -1,0 +1,5 @@
+# IDE stuff
+/nbproject/
+/.idea/
+
+/Assets/**/*.meta
