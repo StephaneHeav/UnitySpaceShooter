@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Game\Animations\BGScroller.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\Follow.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\Grower.cs" />
+     <Compile Include="Assets\Scripts\Game\Animations\IAMover.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\Mover.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\RandomRotator.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\SpecialMover.cs" />

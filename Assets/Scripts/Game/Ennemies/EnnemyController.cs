@@ -5,7 +5,6 @@ public class EnnemyController : Ship {
 
 	// Use this for initialization
 	void Start () {
-		
 		init (1, 20);
 	}
 	
