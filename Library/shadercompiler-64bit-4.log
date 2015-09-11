@@ -1,5 +1,5 @@
 Base path: C:/Users/sheav/Downloads/ETC/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-10204
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-10768
 Cmd: getPlatforms
 Unhandled exception: Readfile from pipe failed. GLE=Le canal de communication a été fermé.
 
