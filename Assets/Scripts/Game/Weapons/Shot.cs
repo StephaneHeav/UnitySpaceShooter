@@ -14,7 +14,7 @@ public class Shot : Weapon {
 			case "Player":
 				if (owner == "Ennemies") {
 					hit ();
-					Ship shipScript = other.GetComponent<Ship> ();
+					PlayerController shipScript = other.GetComponent<PlayerController> ();
 					shipScript.IsHitted (Damage);
 				}
 				break;
@@ -31,7 +31,7 @@ public class Shot : Weapon {
 			case "Ennemies":
 				if (owner == "Player") {
 					hit ();
-					Ship shipScript = other.GetComponent<Ship> ();
+					EnnemyController shipScript = other.GetComponent<EnnemyController> ();
 					if (shipScript.IsHitted (Damage) == Constants.DEAD) {
 						uiController.AddScore(Constants.INDEXSCORETENNEMIES, Constants.INDEXSCORESSHOT, false, 0);
 						itemController.spawnItem (other.transform);

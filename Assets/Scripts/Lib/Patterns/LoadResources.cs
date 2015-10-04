@@ -4,11 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LoadResources : MonoBehaviour {
-	public static List<string> loadTxtAsListString() {
+	public static List<string> loadTxtAsListString(string filename) {
 		List<string> lines = new List<string>();
 		
 		try {
-			TextAsset txt = (TextAsset)Resources.Load("Pattern", typeof(TextAsset));
+			TextAsset txt = (TextAsset)Resources.Load(filename, typeof(TextAsset));
 			String[] lineArray = txt.text.Split('\n');
 			
 			int i = 0, len = lineArray.Length;

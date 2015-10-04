@@ -7,7 +7,7 @@ public class SpecialMover : MonoBehaviour {
 	
 	public void Update() {
 		if (pattern != null) {
-			transform.position = pattern.GetNextPosition (transform.position, speed * Time.deltaTime);
+			transform.position = pattern.GetNextPosition (transform.position, Time.deltaTime, speed);
 		}
 	}
 
