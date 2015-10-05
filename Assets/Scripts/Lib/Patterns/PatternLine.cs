@@ -4,8 +4,10 @@ using System.Collections;
 
 public class PatternLine : Pattern {
     public Vector3 posEnd;
+	private string savePatternString;
 
 	public override void Set (string patternString) {
+		savePatternString = patternString;
 		string[] elements = patternString.Split(')');
 		
 		elements[0] = elements[0].Substring(1);
@@ -17,7 +19,14 @@ public class PatternLine : Pattern {
 		posEnd = new Vector3( System.Convert.ToSingle(posEndString[0]), System.Convert.ToSingle(posEndString[1]), System.Convert.ToSingle(posEndString[2]));
 	}
 	
-	public override Vector3 GetNextPosition (Vector3 currPos, float step) {
-		return Vector3.MoveTowards (currPos, posEnd, step);
+	public override Vector3 GetNextPosition (Vector3 currPos, float deltaTime, float speed) {
+		return Vector3.MoveTowards (currPos, posEnd, deltaTime * speed);
+	}
+
+	public override Pattern GetClone() {
+		Pattern result = new PatternLine ();
+		result.Set (savePatternString);
+
+		return result;
 	}
 }

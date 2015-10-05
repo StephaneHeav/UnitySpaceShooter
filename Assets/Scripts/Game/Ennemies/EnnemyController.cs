@@ -12,4 +12,16 @@ public class EnnemyController : Ship {
 	void Update () {
 	
 	}
+	
+	void OnTriggerEnter (Collider other) {
+		switch (other.tag) {
+		case "Player":
+			Died();
+			PlayerController shipScript = other.GetComponent<PlayerController> ();
+			shipScript.IsHitted (shipScript.GetLife());
+			break;
+		default:
+			break;
+		}
+	}
 }

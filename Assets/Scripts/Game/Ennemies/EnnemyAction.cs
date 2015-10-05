@@ -2,14 +2,26 @@
 using System.Collections;
 
 public class EnnemyAction : MonoBehaviour {
+	
+	private float fireRate;
+	private float nextFire;
 
-	// Use this for initialization
+	public int fireType;
+	
+	private Arsenal arsenal;
+
 	void Start () {
-	
+		GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
+		arsenal = gameControllerObject.GetComponent<Arsenal>();
+
+		fireRate = arsenal.GetFireRate (fireType);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-	
+		if (Time.time > nextFire) {
+			nextFire = Time.time + fireRate;
+			
+			arsenal.Fire (transform, fireType, gameObject.tag);
+		}
 	}
 }
