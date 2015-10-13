@@ -21,7 +21,7 @@ public class DataController : MonoBehaviour {
 
 	void Awake () {
 		DontDestroyOnLoad (this);
-		//ResetData ();
+		ResetData ();
 		LoadData ();
 	}
 

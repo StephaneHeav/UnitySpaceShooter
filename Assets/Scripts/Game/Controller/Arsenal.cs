@@ -12,7 +12,7 @@ public class Arsenal : MonoBehaviour {
 
 	public float boltOrangeFireRate = 0.05f;
 	public float boltBlueFireRate = 0.05f;
-	public float bulletFireRate = 5f;
+	public float bulletFireRate = 2f;
 	public float bombFireRate = 5f;
 
 	public GameObject SpecialFire (GameObject owner, int fireType) {
