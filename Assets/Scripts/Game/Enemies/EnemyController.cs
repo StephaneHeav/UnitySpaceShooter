@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnnemyController : Ship {
+public class EnemyController : Ship {
 
 	// Use this for initialization
 	void Start () {

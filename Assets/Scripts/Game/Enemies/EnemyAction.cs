@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class EnnemyAction : MonoBehaviour {
+public class EnemyAction : MonoBehaviour {
 	public int typeIAAction = 0;
 
 	private float fireRate;

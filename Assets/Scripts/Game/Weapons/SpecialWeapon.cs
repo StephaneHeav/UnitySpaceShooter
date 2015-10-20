@@ -49,10 +49,10 @@ public class SpecialWeapon : MonoBehaviour {
 				uiController.AddScore(Constants.INDEXSCORETLORES, Constants.INDEXSCORESSW, false, 0);
 			}
 			break;
-		case "Ennemies":
+		case "Enemies":
 			Ship shipScript = other.GetComponent<Ship>();
 			if (shipScript.IsHitted(shipScript.GetHealth()) == Constants.DEAD) {
-				uiController.AddScore(Constants.INDEXSCORETENNEMIES, Constants.INDEXSCORESSW, false, 0);
+				uiController.AddScore(Constants.INDEXSCORETENEMIES, Constants.INDEXSCORESSW, false, 0);
 			}
 			break;
 		case "Shot":

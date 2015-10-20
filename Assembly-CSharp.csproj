@@ -69,10 +69,10 @@
      <Compile Include="Assets\Scripts\Game\Controller\MenuController.cs" />
      <Compile Include="Assets\Scripts\Game\Controller\ScoresManager.cs" />
      <Compile Include="Assets\Scripts\Game\Controller\UIController.cs" />
-     <Compile Include="Assets\Scripts\Game\Ennemies\EnnemyAction.cs" />
-     <Compile Include="Assets\Scripts\Game\Ennemies\EnnemyController.cs" />
-     <Compile Include="Assets\Scripts\Game\Ennemies\EnnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Game\Ennemies\EvasiveManeuver.cs" />
+     <Compile Include="Assets\Scripts\Game\Enemies\EnemyAction.cs" />
+     <Compile Include="Assets\Scripts\Game\Enemies\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Game\Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Game\Enemies\EvasiveManeuver.cs" />
      <Compile Include="Assets\Scripts\Game\Events\ActiveByBoundary.cs" />
      <Compile Include="Assets\Scripts\Game\Events\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\Game\Events\DestroyByTime.cs" />

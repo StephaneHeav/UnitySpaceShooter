@@ -25,10 +25,10 @@ public class Bomb : Weapon {
 				itemController.spawnItem(other.transform);
 			}
 			break;
-		case "Ennemies":
+		case "Enemies":
 			Ship shipScript = other.GetComponent<Ship>();
 			if (shipScript.IsHitted(shipScript.GetHealth()) == Constants.DEAD) {
-				uiController.AddScore(Constants.INDEXSCORETENNEMIES, Constants.INDEXSCORESBOMB, false, 0);
+				uiController.AddScore(Constants.INDEXSCORETENEMIES, Constants.INDEXSCORESBOMB, false, 0);
 				itemController.spawnItem(other.transform);
 			}
 			break;

@@ -35,7 +35,7 @@ public static class Constants {
 	public const int SHIP2 = 1;
 	public const int MAXSHIP = 2;
 	
-	public const int INDEXSCORETENNEMIES = 0;
+	public const int INDEXSCORETENEMIES = 0;
 	public const int INDEXSCORETLORES = 1;
 	public const int INDEXSCORETSHOT = 2;
 	public const int INDEXSCORESSHOT = 0;

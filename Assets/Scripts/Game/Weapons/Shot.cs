@@ -12,7 +12,7 @@ public class Shot : Weapon {
 
 			switch (other.tag) {
 			case "Player":
-				if (owner == "Ennemies") {
+				if (owner == "Enemies") {
 					Hit ();
 					PlayerController shipScript = other.GetComponent<PlayerController> ();
 					shipScript.IsHitted (Damage);
@@ -28,12 +28,12 @@ public class Shot : Weapon {
 					}
 				}
 				break;
-			case "Ennemies":
+			case "Enemies":
 				if (owner == "Player") {
 					Hit ();
-					EnnemyController shipScript = other.GetComponent<EnnemyController> ();
+					EnemyController shipScript = other.GetComponent<EnemyController> ();
 					if (shipScript.IsHitted (Damage) == Constants.DEAD) {
-						uiController.AddScore(Constants.INDEXSCORETENNEMIES, Constants.INDEXSCORESSHOT, false, 0);
+						uiController.AddScore(Constants.INDEXSCORETENEMIES, Constants.INDEXSCORESSHOT, false, 0);
 						itemController.spawnItem (other.transform);
 					}
 				}
