@@ -86,15 +86,15 @@ public class SetupDifficulty {
 	public int indexAsteroids;
 	public float waitBtwWave;
 	public float coefWaitFormation;
-	public int simultaneousPattern;
+	public int coefScore;
 	public string desc;
 	
-	public SetupDifficulty (string newName, int newIndexAsteroids, float newWaitBtwWave, float newCoefWaitFormation, int number, string newDesc) {
+	public SetupDifficulty (string newName, int newIndexAsteroids, float newWaitBtwWave, float newCoefWaitFormation, int newCoefScore, string newDesc) {
 		name = newName;
 		indexAsteroids = newIndexAsteroids;
 		waitBtwWave = newWaitBtwWave;
 		coefWaitFormation = newCoefWaitFormation;
-		simultaneousPattern = number;
+		coefScore = newCoefScore;
 		desc = newDesc;
 	}
 }

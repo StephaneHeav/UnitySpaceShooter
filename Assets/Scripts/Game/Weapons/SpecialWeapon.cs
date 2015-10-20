@@ -57,8 +57,9 @@ public class SpecialWeapon : MonoBehaviour {
 			break;
 		case "Shot":
 			Shot shotScript = other.GetComponent<Shot>();
-			
+
 			if (shotScript.GetOwner() != "Player") {
+				shotScript.IsDestroyed ();			
 				uiController.AddScore(Constants.INDEXSCORETSHOT, Constants.INDEXSCORESSW, false, 0);
 			}
 			break;

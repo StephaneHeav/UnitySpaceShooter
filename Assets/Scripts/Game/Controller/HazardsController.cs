@@ -44,98 +44,41 @@ public class HazardsController : MonoBehaviour {
 	}
 
 	public void StartHazards () {
-		int i = setupDiff.simultaneousPattern;
-		for (; i > 0; --i) {
-			StartCoroutine(SpawnWavesLore());
-		}
-		StartCoroutine(SpawnWaves());
+		StartCoroutine(SpawnWavesRandom(Quaternion.identity, asteroidsOrdered[setupDiff.indexAsteroids], manoeuvresLore));
+		StartCoroutine(SpawnWavesRandom(Quaternion.Euler(0, 180, 0), foe, manoeuvresFoe));
 	}
 
-	IEnumerator SpawnWavesLore () {
+	IEnumerator SpawnWavesRandom (Quaternion spawnRotation, GameObject gameObj, List<Manoeuvre> manoeuvresList) {
 		int i = 0, len = 0;
 
 		Manoeuvre currManoeuvre;
 		Formation currFormation;
 
-		Quaternion spawnRotation = Quaternion.identity;
 		GameObject hazardObject;
 		SpecialMover specialMover;
 
 		yield return new WaitForSeconds(startWait);
-		while (true) {
-			currManoeuvre = manoeuvresLore[Random.Range (0, manoeuvresLore.Count)];
+
+		while (gameController.gameState != Constants.GAMEOVER) {
+			currManoeuvre = manoeuvresList[Random.Range (0, manoeuvresList.Count)];
 			currManoeuvre.StartManoeuvre ();
 
-
-			while( (currFormation = currManoeuvre.GetNextFormation()) != null) {
-				if (gameController.gameState == Constants.GAMEOVER) {
-					break;
-				}
-
+			while( (currFormation = currManoeuvre.GetNextFormation()) != null || gameController.gameState == Constants.GAMEOVER) {
 				i = 0;
 				len = currFormation.formation.Length;
 
 				for (; i < len; ++i) {
-					hazardObject = (GameObject) Instantiate(asteroidsOrdered[setupDiff.indexAsteroids], currFormation.formation[i].posStart, spawnRotation);
+					hazardObject = (GameObject) Instantiate(gameObj, currFormation.formation[i].posStart, spawnRotation);
 					specialMover = hazardObject.GetComponent<SpecialMover> ();
 					specialMover.SetPattern (currFormation.formation[i].GetClone());
 				}
 
 				yield return new WaitForSeconds(currFormation.timer * setupDiff.coefWaitFormation);
 			}
-			
-			if (gameController.gameState == Constants.GAMEOVER) {
-				break;
-			} else {
-				yield return new WaitForSeconds(setupDiff.waitBtwWave);
-			}
-		}
-		if (gameController.gameState == Constants.GAMEOVER) {
-			yield break;
-		}
-	}
-	
-	IEnumerator SpawnWaves () {
-		int i = 0, len = 0;
-		
-		Manoeuvre currManoeuvre;
-		Formation currFormation;
-		
-		Quaternion spawnRotation = Quaternion.Euler(0, 180, 0);
-		GameObject hazardObject;
-		SpecialMover specialMover;
-		
-		yield return new WaitForSeconds(startWait);
-		while (true) {
-			currManoeuvre = manoeuvresFoe[Random.Range (0, manoeuvresFoe.Count)];
-			currManoeuvre.StartManoeuvre ();
-			
-			
-			while( (currFormation = currManoeuvre.GetNextFormation()) != null) {
-				if (gameController.gameState == Constants.GAMEOVER) {
-					break;
-				}
 				
-				i = 0;
-				len = currFormation.formation.Length;
-				
-				for (; i < len; ++i) {
-					hazardObject = (GameObject) Instantiate(foe, currFormation.formation[i].posStart, spawnRotation);
-					specialMover = hazardObject.GetComponent<SpecialMover> ();
-					specialMover.SetPattern (currFormation.formation[i].GetClone());
-				}
-				
-				yield return new WaitForSeconds(currFormation.timer * setupDiff.coefWaitFormation);
-			}
-			
-			if (gameController.gameState == Constants.GAMEOVER) {
-				break;
-			} else {
-				yield return new WaitForSeconds(setupDiff.waitBtwWave);
-			}
+			yield return new WaitForSeconds(setupDiff.waitBtwWave);
 		}
-		if (gameController.gameState == Constants.GAMEOVER) {
-			yield break;
-		}
+
+		yield break;
 	}
 }

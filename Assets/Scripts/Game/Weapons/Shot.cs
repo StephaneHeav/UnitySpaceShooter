@@ -13,14 +13,14 @@ public class Shot : Weapon {
 			switch (other.tag) {
 			case "Player":
 				if (owner == "Ennemies") {
-					hit ();
+					Hit ();
 					PlayerController shipScript = other.GetComponent<PlayerController> ();
 					shipScript.IsHitted (Damage);
 				}
 				break;
 			case "Lore":
 				if (owner == "Player") {
-					hit ();
+					Hit ();
 					Lore loreScript = other.GetComponent<Lore> ();
 					if (loreScript.IsHitted (Damage) == Constants.DEAD) {
 						uiController.AddScore(Constants.INDEXSCORETLORES, Constants.INDEXSCORESSHOT, false, 0);
@@ -30,7 +30,7 @@ public class Shot : Weapon {
 				break;
 			case "Ennemies":
 				if (owner == "Player") {
-					hit ();
+					Hit ();
 					EnnemyController shipScript = other.GetComponent<EnnemyController> ();
 					if (shipScript.IsHitted (Damage) == Constants.DEAD) {
 						uiController.AddScore(Constants.INDEXSCORETENNEMIES, Constants.INDEXSCORESSHOT, false, 0);
@@ -44,8 +44,12 @@ public class Shot : Weapon {
 		}
 	}
 
-	private void hit () {
+	public void IsDestroyed () {
 		Destroy(gameObject);
+	}
+
+	private void Hit () {
 		Instantiate(explosion, transform.position, transform.rotation);
+		IsDestroyed ();
 	}
 }

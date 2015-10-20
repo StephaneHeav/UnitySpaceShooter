@@ -34,8 +34,9 @@ public class Bomb : Weapon {
 			break;
 		case "Shot":
 			Shot shotScript = other.GetComponent<Shot>();
-			
+
 			if (shotScript.GetOwner() != "Player") {
+				shotScript.IsDestroyed ();
 				uiController.AddScore(Constants.INDEXSCORETSHOT, Constants.INDEXSCORESBOMB, false, 0);
 			}
 			break;

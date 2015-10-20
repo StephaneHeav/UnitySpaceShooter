@@ -5,11 +5,11 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 	public static SetupDifficulty[] difficultyList = new SetupDifficulty[] {
 		new SetupDifficulty("Navio Mode", 2, 10f, 2f, 1, "Asteroids speed : \t\t\t\t\t Slow\nAsteroids size : \t\t\t\t\t Big\nTime between waves : \t\t 10 sec\nTime between asteroids : \t Slow\n"),
-		new SetupDifficulty("Normal Mode", 1, 5f, 1f, 1, "Asteroids speed : \t\t\t\t\t Normal\nAsteroids size : \t\t\t\t\t Medium\nTime between waves : \t\t 5 sec\nTime between asteroids : \t Normal\n"),
-		new SetupDifficulty("Master Mode", 1, 2f, 0.5f, 1, "Asteroids speed : \t\t\t\t\t Normal\nAsteroids size : \t\t\t\t\t Medium\nTime between waves : \t\t 2 sec\nTime between asteroids : \t Fast\n"),
-		new SetupDifficulty("God Mode", 0, 0f, 0.25f, 1, "Asteroids speed : \t\t\t\t\t Fast\nAsteroids size : \t\t\t\t\t Small\nTime between waves : \t\t 0 sec\nTime between asteroids : \t Fastest\n"),
-		new SetupDifficulty("God X Mode", 0, 0f, 0.25f, 2, "Asteroids speed : \t\t\t\t\t Fast\nAsteroids size : \t\t\t\t\t Small\nTime between waves : \t\t 0 sec\nTime between asteroids : \t Fastest\n"),
-		new SetupDifficulty("God XX Mode", 0, 0f, 0.25f, 3, "Asteroids speed : \t\t\t\t\t Fast\nAsteroids size : \t\t\t\t\t Small\nTime between waves : \t\t 0 sec\nTime between asteroids : \t Fastest\n")
+		new SetupDifficulty("Normal Mode", 1, 5f, 2f, 1, "Asteroids speed : \t\t\t\t\t Normal\nAsteroids size : \t\t\t\t\t Medium\nTime between waves : \t\t 5 sec\nTime between asteroids : \t Slow\n"),
+		new SetupDifficulty("Master Mode", 1, 2f, 1f, 1, "Asteroids speed : \t\t\t\t\t Normal\nAsteroids size : \t\t\t\t\t Medium\nTime between waves : \t\t 2 sec\nTime between asteroids : \t Normal\n"),
+		new SetupDifficulty("God Mode", 0, 0f, 1f, 1, "Asteroids speed : \t\t\t\t\t Fast\nAsteroids size : \t\t\t\t\t Small\nTime between waves : \t\t 0 sec\nTime between asteroids : \t Normal\n"),
+		new SetupDifficulty("God X Mode", 0, 0f, 0.5f, 2, "Asteroids speed : \t\t\t\t\t Fast\nAsteroids size : \t\t\t\t\t Small\nTime between waves : \t\t 0 sec\nTime between asteroids : \t Fast\n"),
+		new SetupDifficulty("God XX Mode", 0, 0f, 0.25f, 3, "Asteroids speed : \t\t\t\t\t Fast\nAsteroids size : \t\t\t\t\t Small\nTime between waves : \t\t 0 sec\nTime between asteroids : \t Fast\n")
 	};
 	
 	public Image gameOverPanel;
@@ -93,6 +93,7 @@ public class GameController : MonoBehaviour {
 		dataController.SetDifficulty (newDifficulty);
 		hazardsController.SetHazards(difficultyList[newDifficulty]);
 		menuController.SetDifficultySlider (newDifficulty);
+		uiController.SetCoefScore(difficultyList[newDifficulty].coefScore);
 	}
 
 	public void GameOver () {

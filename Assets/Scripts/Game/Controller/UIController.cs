@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour {
 	public Text lifeText;
 	public Text bombText;
 	public Slider energySlider;
+	public int coefScore = 1;
 
 	private float multiplicator;
 	
@@ -23,6 +24,10 @@ public class UIController : MonoBehaviour {
 		UpdateScore();
 	}
 
+	public void SetCoefScore (int newCoefScore) {
+		coefScore = newCoefScore;
+	}
+
 	public void UpdateEnergy (float newEnergy) {
 		energySlider.value = newEnergy;
 	}
@@ -35,6 +40,8 @@ public class UIController : MonoBehaviour {
 		} else {
 			newScoreValue = forceScore;
 		}
+
+		newScoreValue = newScoreValue * coefScore;
 
 		if (hasMultiplicator) {
 			if (newScoreValue > 0) {
