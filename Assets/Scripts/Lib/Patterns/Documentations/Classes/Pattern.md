@@ -29,7 +29,8 @@ Abstract Class
 |:----------:|:-----:|:------:|
 | public | abstract | void |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | patternString  | string | string to parse |
@@ -42,7 +43,8 @@ Initialize the Pattern Object with the string.
 |:----------:|:-----:|:------:|
 | public | abstract | Vector3 |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | currPos  | Vector3 | string to parse |
@@ -57,7 +59,7 @@ Return the next position.
 |:----------:|:-----:|:------:|
 | public | abstract | Pattern  |
 
-- Arguments: none
+Arguments: none
 
 Return a clone of the current object
 

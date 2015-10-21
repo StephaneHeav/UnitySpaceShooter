@@ -25,7 +25,8 @@
 |:----------:|:-----:|:------:|
 | public | - | Formation |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | formationString | string | string to parse |

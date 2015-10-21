@@ -34,7 +34,8 @@ Inherit : Pattern
 |:----------:|:-----:|:------:|
 | public | override | void |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | patternString  | string | string to parse |
@@ -47,7 +48,8 @@ Initialize the Pattern Object with the string.
 |:----------:|:-----:|:------:|
 | public | override | Vector3 |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | currPos  | Vector3 | string to parse |
@@ -62,6 +64,6 @@ Return the next position for a oscillate curve (relative to the linear trajector
 |:----------:|:-----:|:------:|
 | public | override | Pattern  |
 
-- Arguments: none
+Arguments: none
 
 Return a clone of the current object

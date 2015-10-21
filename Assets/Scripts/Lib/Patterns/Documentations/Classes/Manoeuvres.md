@@ -28,7 +28,8 @@
 |:----------:|:-----:|:------:|
 | public | static | Manoeuvre |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | manoeuvreString | string | string to parse |
@@ -41,7 +42,7 @@ Initialize and fill the formation's array with formation from the parsed string.
 |:----------:|:-----:|:------:|
 | public | - | float |
 
-- Arguments: none
+Arguments: none
 
 Initialize the manoeuvre for reading purpose.
 
@@ -51,6 +52,6 @@ Initialize the manoeuvre for reading purpose.
 |:----------:|:-----:|:------:|
 | public | - | Formation |
 
-- Arguments: none
+Arguments: none
 
 Return the next formation (with the cursor) or null if it is finished.

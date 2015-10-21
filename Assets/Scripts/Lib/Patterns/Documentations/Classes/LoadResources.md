@@ -20,7 +20,8 @@
 |:----------:|:-----:|:------:|
 | public | static | List<string> |
 
-- Arguments:
+Arguments:
+
 | Name | Type | Description |
 |:----:|:----:|-------------|
 | filename | string | file's name in Assets/Resources |
