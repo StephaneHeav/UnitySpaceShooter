@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LoadResources : MonoBehaviour {
-	public static List<string> loadTxtAsListString(string filename) {
+	public static List<string> LoadTxtAsListString(string filename) {
 		List<string> lines = new List<string>();
 		
 		try {

@@ -3,7 +3,8 @@ using System;
 using System.Collections;
 
 public abstract class Pattern {
-    public Vector3 posStart;
+	public Vector3 posStart;
+	protected string savePatternString;
 	
 	public abstract void Set (string patternString);
 	public abstract Vector3 GetNextPosition (Vector3 currPos, float deltaTime, float speed);

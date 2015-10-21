@@ -24,14 +24,14 @@ public class HazardsController : MonoBehaviour {
 
 		gameController = GetComponent<GameController>();
 		
-		patternsString = LoadResources.loadTxtAsListString ("PatternLore");
+		patternsString = LoadResources.LoadTxtAsListString ("PatternLore");
 		manoeuvresLore = new List<Manoeuvre> ();
 		
 		for (i = 0; i < patternsString.Count; ++i) {
 			manoeuvresLore.Add (Manoeuvre.Create(patternsString[i]));
 		}
 		
-		patternsString = LoadResources.loadTxtAsListString ("PatternFoe");
+		patternsString = LoadResources.LoadTxtAsListString ("PatternFoe");
 		manoeuvresFoe = new List<Manoeuvre> ();
 		
 		for (i = 0; i < patternsString.Count; ++i) {

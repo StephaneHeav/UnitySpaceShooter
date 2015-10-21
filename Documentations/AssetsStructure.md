@@ -1,20 +1,38 @@
 # Assets Structures
+
 Light description for all folders, files and classes.
+_ _ _
 
-[TOC]
+**Table of Contents**
+- [Resources](#resources)
+- [Scripts](#scripts)
+    - [Animations](#animations)
+    - [Classes](#classes)
+    - [Controller](#controller)
+    - [Enemies](#enemies)
+    - [Events](#events)
+    - [Items](#items)
+    - [Lore](#lore)
+    - [Players](#players)
+    - [Weapons](#weapons)
 
-- - -
+* * *
 
 ## Resources
+[Assets/Resources/](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Resources/)
+
 - PatternFoe.txt
 	Text file to fill the manoeuvre list for random Spaceship pattern spawn.
+
 - PatternLore.txt
 	Text file to fill the manoeuvre list for random Asteroids pattern spawn.
 
-- - -
+* * *
 
 ## Scripts
 Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game)
+
+_ _ _
 
 ### Animations
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Animations) contains scripts for the game animation.
@@ -43,11 +61,24 @@ Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://git
 - SpecialMover.cs
 	A GameObject will move according to a pattern
 
-### Class
-[This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Class) contains generics classes.
+_ _ _
+
+### Classes
+[This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Classes) contains generics classes.
+
+- Constants.cs
+- Items.cs
+- Lib.cs
+- Lore.cs
+- Ship.cs
+- Weapon.cs
+
+_ _ _
 
 ### Controller
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Controller) contains scripts for controller management.
+
+_ _ _
 
 ### Enemies
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Enemies) contains scripts for enemies.
@@ -66,6 +97,8 @@ Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://git
 - EvasiveManeuver.cs
 	Not use.
 
+_ _ _
+
 ### Events
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Events) contains event scripts management.
 
@@ -82,6 +115,8 @@ Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://git
 
 - DestroyShotByTime.cs
 	Old script to make shot exploding after a time.
+
+_ _ _
 
 ### Items
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Items) contains scripts for items.
@@ -106,6 +141,8 @@ Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://git
 	Inherit from Class/Items.cs
     Give score points to the player.
 
+_ _ _
+
 ### Lore
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Lore) contains scripts for lores.
 
@@ -113,6 +150,8 @@ Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://git
 	Inherit from Class/Lore.cs
     Set asteroid's life pool.
     Can only destroy the playership.
+
+_ _ _
 
 ### Players
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Players) contains scripts for player ship.
@@ -127,6 +166,8 @@ Scripts for the game are locate in the folder [Assets/Scripts/Game/](https://git
 
 - PlayerMovement.cs
 	Basic script for movement. WASD ou Arrow key listener.
+
+_ _ _
 
 ### Weapons
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Weapons) contains scripts for weapons.

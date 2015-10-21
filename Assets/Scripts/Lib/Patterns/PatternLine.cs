@@ -4,7 +4,6 @@ using System.Collections;
 
 public class PatternLine : Pattern {
     public Vector3 posEnd;
-	private string savePatternString;
 
 	public override void Set (string patternString) {
 		savePatternString = patternString;

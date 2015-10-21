@@ -54,12 +54,12 @@
      <Compile Include="Assets\Scripts\Game\Animations\Mover.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\RandomRotator.cs" />
      <Compile Include="Assets\Scripts\Game\Animations\SpecialMover.cs" />
-     <Compile Include="Assets\Scripts\Game\Class\Constants.cs" />
-     <Compile Include="Assets\Scripts\Game\Class\Items.cs" />
-     <Compile Include="Assets\Scripts\Game\Class\Lib.cs" />
-     <Compile Include="Assets\Scripts\Game\Class\Lore.cs" />
-     <Compile Include="Assets\Scripts\Game\Class\Ship.cs" />
-     <Compile Include="Assets\Scripts\Game\Class\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Game\Classes\Constants.cs" />
+     <Compile Include="Assets\Scripts\Game\Classes\Items.cs" />
+     <Compile Include="Assets\Scripts\Game\Classes\Lib.cs" />
+     <Compile Include="Assets\Scripts\Game\Classes\Lore.cs" />
+     <Compile Include="Assets\Scripts\Game\Classes\Ship.cs" />
+     <Compile Include="Assets\Scripts\Game\Classes\Weapon.cs" />
      <Compile Include="Assets\Scripts\Game\Controller\Arsenal.cs" />
      <Compile Include="Assets\Scripts\Game\Controller\DataController.cs" />
      <Compile Include="Assets\Scripts\Game\Controller\GameController.cs" />
@@ -97,8 +97,6 @@
      <Compile Include="Assets\Scripts\Lib\Patterns\PatternLine.cs" />
      <Compile Include="Assets\Scripts\Lib\Patterns\PatternZigZag.cs" />
      <None Include="Assets\Resources\PatternFoe.txt" />
-     <None Include="Assets\Scripts\Lib\Patterns\PatternLore.txt" />
-     <None Include="Assets\Scripts\Lib\Patterns\PatternFoe.txt" />
      <None Include="Assets\Resources\PatternLore.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/sheav/Downloads/ETC/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

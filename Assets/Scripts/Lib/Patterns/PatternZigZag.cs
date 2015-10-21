@@ -5,8 +5,7 @@ using System.Collections;
 public class PatternZigZag : Pattern {
 	private float amplitudeX = 1.0f;
 	private float amplitudeZ = 1.0f;
-	private Vector3 lineairePos;
-	private string savePatternString;
+	private Vector3 linearPos;
 	private float direction;
 
 	public Vector3 posEnd;
@@ -18,7 +17,7 @@ public class PatternZigZag : Pattern {
 		elements[0] = elements[0].Substring(1);
 		string[] posStartString = elements[0].Split(',');
 		posStart = new Vector3( System.Convert.ToSingle(posStartString[0]), System.Convert.ToSingle(posStartString[1]), System.Convert.ToSingle(posStartString[2]));
-		lineairePos = posStart;
+		linearPos = posStart;
 
 		elements[1] = elements[1].Substring(1);
 		string[] posEndString = elements[1].Split(',');
@@ -41,15 +40,15 @@ public class PatternZigZag : Pattern {
 	public override Vector3 GetNextPosition (Vector3 currPos, float deltaTime, float speed) {
 		float distance;
 		Vector2 v;
-		lineairePos = Vector3.MoveTowards (lineairePos, posEnd, deltaTime * speed);
+		linearPos = Vector3.MoveTowards (linearPos, posEnd, deltaTime * speed);
 
-		distance = Vector3.Distance (posStart, lineairePos);
+		distance = Vector3.Distance (posStart, linearPos);
 		distance = amplitudeX * (float)(Math.Sin (amplitudeZ * distance));
 
-		v = new Vector2 (posStart.x, posStart.z) - new Vector2 (lineairePos.x, lineairePos.z);
+		v = new Vector2 (posStart.x, posStart.z) - new Vector2 (linearPos.x, linearPos.z);
 		v = new Vector2 (-v.y, v.x) / (float) Math.Sqrt (Mathf.Pow(v.x, 2) + Mathf.Pow(v.y, 2)) * distance * direction;
 
-		return lineairePos + new Vector3(v.x, 0, v.y);
+		return linearPos + new Vector3(v.x, 0, v.y);
 	}
 	
 	public override Pattern GetClone() {
