@@ -67,16 +67,41 @@ _ _ _
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Classes) contains generics classes.
 
 - Constants.cs
+	Constants and small classes use in the project.
 - Items.cs
+    Abstract class for all items.
 - Lib.cs
+    Library with methode use in the project.
 - Lore.cs
+	Abstract class for all lore.
 - Ship.cs
+	Abstract class for all ship.
 - Weapon.cs
+	Abstract class for all weapon or shot.
 
 _ _ _
 
 ### Controller
 [This folder](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Game/Controller) contains scripts for controller management.
+
+- Arsenal.cs
+	Weapon, shot manager.
+- DataController.cs
+	Save data Manager.
+- GameController.cs
+	Main game manager.
+- HazardsController.cs
+	Lore and enemy spaceship spawning (with pattern library) manager.
+- ItemsController.cs
+	Loot system manager.
+- KeyManager.cs
+	Set up the UI display for key binding.
+- MenuController.cs
+	Menu system manager.
+- ScoreManager.cs
+	Set up the UI display for the score.
+- UIController.cs
+	UI system (not the menu) manager.
 
 _ _ _
 
