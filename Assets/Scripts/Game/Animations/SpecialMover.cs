@@ -3,15 +3,15 @@ using System.Collections;
 
 public class SpecialMover : MonoBehaviour {
 	public float speed = 30;
-	private Pattern pattern = null;
+	private Trajectory trajectory = null;
 	
 	public void Update() {
-		if (pattern != null) {
-			transform.position = pattern.GetNextPosition (transform.position, Time.deltaTime, speed);
+		if (trajectory != null) {
+			transform.position = trajectory.GetNextPosition (transform.position, Time.deltaTime, speed);
 		}
 	}
 
-	public void SetPattern (Pattern newPattern) {
-		pattern = newPattern;
+	public void SetTrajectory (Trajectory newPattern) {
+		trajectory = newPattern;
 	}
 }

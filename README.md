@@ -31,7 +31,7 @@ If you have any advice to give, i will be happy to hear them.
 
 ### Libraries
 
-- [Pattern library](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Lib/Patterns)
+- [Patterns library](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Lib/Patterns/Documentations)
 
 * * *
 
@@ -40,11 +40,13 @@ If you have any advice to give, i will be happy to hear them.
 ### Major
 - Add enemies firing patterned shot
 - Add Bosses
+- More and better documentation
+- Better english ;)
 
 ### Minor
-- Add no random game
+- Add no random spawn
 - Add video and audio manager
-- Add no asteroids or no enemies's ship game
+- Add no asteroids or no enemies's ship spawn game
 
 ### Upgrade / Update / Fix
 - Fix UI position
@@ -60,5 +62,5 @@ Unity3D website tutorials and assets store.
 And the colorful square comes from my poor Gimp skill (; _ ;).
 
 - Algorithme | Code :
-	- My [Pattern library](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Lib/Patterns) is a modified version of [Bestiary management](https://theliquidfire.wordpress.com/2014/12/25/bestiary-management-and-scriptable-objects/)
+	- My [Patterns library](https://github.com/StephaneHeav/UnitySpaceShooter/tree/master/Assets/Scripts/Lib/Patterns) is a modified version of [Bestiary management](https://theliquidfire.wordpress.com/2014/12/25/bestiary-management-and-scriptable-objects/)
 	- My laser beam is based on [this](http://steredenn-game.tumblr.com/post/98397504410/steredenn-making-an-expandable-laser) with some upgrade (growing laser).

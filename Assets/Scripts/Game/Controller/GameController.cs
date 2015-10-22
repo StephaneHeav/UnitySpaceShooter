@@ -103,7 +103,12 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void OverNSubmit () {
-		dataController.SetScores (playerName.text, uiController.GetScore ());
+		string playerNameTxt = playerName.text;
+		if (playerNameTxt == null || playerNameTxt == "") {
+			playerNameTxt = "------------";
+		}
+
+		dataController.SetScores (playerNameTxt, uiController.GetScore ());
 		menuController.RetryGame();
 	}
 }

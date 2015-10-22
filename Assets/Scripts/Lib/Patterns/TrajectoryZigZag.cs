@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class PatternZigZag : Pattern {
+public class TrajectoryZigZag : Trajectory {
 	private float amplitudeX = 1.0f;
 	private float amplitudeZ = 1.0f;
 	private Vector3 linearPos;
@@ -10,9 +10,9 @@ public class PatternZigZag : Pattern {
 
 	public Vector3 posEnd;
 
-	public override void Set (string patternString) {
-		savePatternString = patternString;
-		string[] elements = patternString.Split(')');
+	public override void Set (string trajectoryString) {
+		saveTrajectoryString = trajectoryString;
+		string[] elements = trajectoryString.Split(')');
 		
 		elements[0] = elements[0].Substring(1);
 		string[] posStartString = elements[0].Split(',');
@@ -51,9 +51,9 @@ public class PatternZigZag : Pattern {
 		return linearPos + new Vector3(v.x, 0, v.y);
 	}
 	
-	public override Pattern GetClone() {
-		Pattern result = new PatternZigZag ();
-		result.Set (savePatternString);
+	public override Trajectory GetClone() {
+		Trajectory result = new TrajectoryZigZag ();
+		result.Set (saveTrajectoryString);
 		
 		return result;
 	}

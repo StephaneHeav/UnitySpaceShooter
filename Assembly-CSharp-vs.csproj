@@ -93,9 +93,9 @@
      <Compile Include="Assets\Scripts\Lib\Patterns\Formation.cs" />
      <Compile Include="Assets\Scripts\Lib\Patterns\LoadResources.cs" />
      <Compile Include="Assets\Scripts\Lib\Patterns\Manoeuvre.cs" />
-     <Compile Include="Assets\Scripts\Lib\Patterns\Pattern.cs" />
-     <Compile Include="Assets\Scripts\Lib\Patterns\PatternLine.cs" />
-     <Compile Include="Assets\Scripts\Lib\Patterns\PatternZigZag.cs" />
+     <Compile Include="Assets\Scripts\Lib\Patterns\Trajectory.cs" />
+     <Compile Include="Assets\Scripts\Lib\Patterns\TrajectoryLine.cs" />
+     <Compile Include="Assets\Scripts\Lib\Patterns\TrajectoryZigZag.cs" />
      <None Include="Assets\Resources\PatternFoe.txt" />
      <None Include="Assets\Resources\PatternLore.txt" />
  <Reference Include="UnityEngine.UI">

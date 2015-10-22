@@ -2,12 +2,12 @@ using UnityEngine;
 using System;
 using System.Collections;
 
-public class PatternLine : Pattern {
+public class TrajectoryLine : Trajectory {
     public Vector3 posEnd;
 
-	public override void Set (string patternString) {
-		savePatternString = patternString;
-		string[] elements = patternString.Split(')');
+	public override void Set (string trajectoryString) {
+		saveTrajectoryString = trajectoryString;
+		string[] elements = trajectoryString.Split(')');
 		
 		elements[0] = elements[0].Substring(1);
 		string[] posStartString = elements[0].Split(',');
@@ -22,9 +22,9 @@ public class PatternLine : Pattern {
 		return Vector3.MoveTowards (currPos, posEnd, deltaTime * speed);
 	}
 
-	public override Pattern GetClone() {
-		Pattern result = new PatternLine ();
-		result.Set (savePatternString);
+	public override Trajectory GetClone() {
+		Trajectory result = new TrajectoryLine ();
+		result.Set (saveTrajectoryString);
 
 		return result;
 	}

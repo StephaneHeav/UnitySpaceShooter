@@ -13,6 +13,8 @@ public class Follow : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-		transform.position = target.transform.position + addValue;
+		if (target != null) {
+			transform.position = target.transform.position + addValue;
+		}
 	}
 }

@@ -63,14 +63,14 @@ public class HazardsController : MonoBehaviour {
 			currManoeuvre = manoeuvresList[Random.Range (0, manoeuvresList.Count)];
 			currManoeuvre.StartManoeuvre ();
 
-			while( (currFormation = currManoeuvre.GetNextFormation()) != null || gameController.gameState == Constants.GAMEOVER) {
+			while( (currFormation = currManoeuvre.GetNextFormation()) != null && currFormation.formation != null && gameController.gameState != Constants.GAMEOVER) {
 				i = 0;
 				len = currFormation.formation.Length;
 
 				for (; i < len; ++i) {
 					hazardObject = (GameObject) Instantiate(gameObj, currFormation.formation[i].posStart, spawnRotation);
 					specialMover = hazardObject.GetComponent<SpecialMover> ();
-					specialMover.SetPattern (currFormation.formation[i].GetClone());
+					specialMover.SetTrajectory (currFormation.formation[i].GetClone());
 				}
 
 				yield return new WaitForSeconds(currFormation.timer * setupDiff.coefWaitFormation);

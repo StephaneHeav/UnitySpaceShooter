@@ -4,24 +4,24 @@ using System.Reflection;
 using System.Collections;
 
 public class Formation {
-    public Pattern[] formation;
+    public Trajectory[] formation;
     public float timer;
 
     public Formation Create (string formationString) {
         Formation retValue = new Formation();
 
         string[] elements = formationString.Split('=');
-        string[] patternsString = elements[0].Split('|');
-        string[] patternString = null;
-		int i = patternsString.Length - 1;
+        string[] trajectoriesString = elements[0].Split('|');
+        string[] trajectoryString = null;
+		int i = trajectoriesString.Length - 1;
 
-        retValue.formation = new Pattern[patternsString.Length];
+		retValue.formation = new Trajectory[trajectoriesString.Length];
         retValue.timer = System.Convert.ToSingle(elements[1]);
 
         for (; i >= 0; --i) {
-            patternString = patternsString[i].Split('#');
-			retValue.formation[i] = (Pattern) Activator.CreateInstance(Type.GetType(patternString[0]));
-			retValue.formation[i].Set(patternString[1]);
+			trajectoryString = trajectoriesString[i].Split('#');
+			retValue.formation[i] = (Trajectory) Activator.CreateInstance(Type.GetType(trajectoryString[0]));
+			retValue.formation[i].Set(trajectoryString[1]);
         }
 
         return retValue;

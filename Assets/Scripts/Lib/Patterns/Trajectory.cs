@@ -2,11 +2,11 @@ using UnityEngine;
 using System;
 using System.Collections;
 
-public abstract class Pattern {
+public abstract class Trajectory {
 	public Vector3 posStart;
-	protected string savePatternString;
+	protected string saveTrajectoryString;
 	
-	public abstract void Set (string patternString);
+	public abstract void Set (string trajectoryString);
 	public abstract Vector3 GetNextPosition (Vector3 currPos, float deltaTime, float speed);
-	public abstract Pattern GetClone();
+	public abstract Trajectory GetClone();
 }
