@@ -24,12 +24,15 @@ Manoeuvre is the formation's order with time after each of them.
 ## How to use :
 
 - A Trajectory has a name and arguments based on the Trajectory name. It is separate by `#`. After `#`, it is the inherited Trajectory which parse the arguments.
+
 		TrajectoryZigZag#(-1,0,20)(1,0,-7)(2,1,1)
 		TrajectoryLine#(-3,0,20)(-3,0,-7)
 
 - A Formation has one or many Trajectory separate by `|` and a time (seconde) at the end separate by `=`.
+
 		TrajectoryZigZag#(-1,0,20)(1,0,-7)(2,1,1)|TrajectoryLine#(-3,0,20)(-3,0,-7)=0.5
 
 - A Manoeuvre has one or many Formation separate by `;`.
+
 		TrajectoryZigZag#(-1,0,20)(1,0,-7)(2,1,1)|TrajectoryLine#(-3,0,20)(-3,0,-7)=0.5;TrajectoryZigZag#(-1,0,20)(1,0,-7)(2,1,1)|TrajectoryLine#(-3,0,20)(-3,0,-7)=0.5
 
