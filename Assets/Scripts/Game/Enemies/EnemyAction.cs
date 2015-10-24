@@ -11,43 +11,76 @@ public class EnemyAction : MonoBehaviour {
 	public int fireType;
 	
 	private Arsenal arsenal;
-	private GameObject playerObj;
 	private Action actionFunc;
+	private GameObject playerShip;
 
 	void Start () {
 		GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
 		arsenal = gameControllerObject.GetComponent<Arsenal>();
 
-		playerObj = GameObject.FindGameObjectWithTag("Player");
+		playerShip = GameObject.FindGameObjectWithTag ("Player");
 
 		fireRate = arsenal.GetFireRate (fireType);
+
 		switch (typeIAAction) {
 		case 1:
-			actionFunc = complexeAction;
+			//nothing
 			break;
 		default:
-			actionFunc = simpleAction;
+			StartCoroutine(simpleAction());
 			break;
 		}
 	}
 
-	void Update () {
-		actionFunc ();
+	public void SetComplexeAction (int typeCA) {
+		StartCoroutine(complexeAction(0f, typeCA));
 	}
 
-	private void simpleAction () {
-		if (Time.time > nextFire) {
-			nextFire = Time.time + fireRate;
-			
+	IEnumerator simpleAction () {
+		while (true) {
 			arsenal.Fire (transform, fireType, gameObject.tag);
+
+			yield return new WaitForSeconds (fireRate);
 		}
 	}
 
-	private void complexeAction () {
-		if (Time.time > nextFire && playerObj.transform.position.x >= transform.position.x - 2 && playerObj.transform.position.x <= transform.position.x + 2) {
-			nextFire = Time.time + fireRate;
+	IEnumerator complexeAction (float delay, int typeCA) {
+		Manoeuvre lastManoeuvre;
+		Formation currFormation;
+		int i, len;
+
+		yield return new WaitForSeconds(delay);
+		while (true) {
+			switch (typeCA) {
+			case 1:
+				lastManoeuvre = PatternFactory.SpiralPattern (16, 1, 0.1f, transform.position);
+				break;
+			case 2:
+				lastManoeuvre = PatternFactory.CirclePattern (16, 1, 0.1f, transform.position);
+				break;
+			case 3:
+				lastManoeuvre = PatternFactory.HalfCirclePattern (16, 5, 1f, transform.position, playerShip.transform.position);
+				break;
+			default:
+				lastManoeuvre = PatternFactory.QuarterCirclePattern (16, 5, 1f, transform.position, playerShip.transform.position);
+				break;
+			}
+			lastManoeuvre.StartManoeuvre ();
 			
-			arsenal.Fire (transform, fireType, gameObject.tag);
+			while( (currFormation = lastManoeuvre.GetNextFormation()) != null && currFormation.formation != null) {
+				i = 0;
+				len = currFormation.formation.Length;
+				
+				for (; i < len; ++i) {
+					GameObject shot = arsenal.Fire (transform, fireType, gameObject.tag);
+					SpecialMover spScrip = shot.GetComponent<SpecialMover> ();
+					spScrip.SetTrajectory (currFormation.formation[i].GetClone());
+				}
+				
+				yield return new WaitForSeconds(currFormation.timer);
+			}
+			
+			yield return new WaitForSeconds (1f);
 		}
 	}
 }

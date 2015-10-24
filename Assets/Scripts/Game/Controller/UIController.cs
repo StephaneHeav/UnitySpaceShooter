@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour {
 	private float multiplicator;
 	
 	private int score;
-	private int[] scoreTable = new int[] {10,1,1};
+	private int[] scoreTable = new int[] {1,1,10,30,100};
 	private int[] multiplicatorTable = new int[] {100,10,10};
 
 	void Start () {

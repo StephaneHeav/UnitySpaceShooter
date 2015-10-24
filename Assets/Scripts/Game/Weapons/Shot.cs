@@ -33,7 +33,7 @@ public class Shot : Weapon {
 					Hit ();
 					EnemyController shipScript = other.GetComponent<EnemyController> ();
 					if (shipScript.IsHitted (Damage) == Constants.DEAD) {
-						uiController.AddScore(Constants.INDEXSCORETENEMIES, Constants.INDEXSCORESSHOT, false, 0);
+						uiController.AddScore(shipScript.indexScoreEnemy, Constants.INDEXSCORESSHOT, false, 0);
 						itemController.spawnItem (other.transform);
 					}
 				}

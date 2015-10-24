@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class EnemyController : Ship {
+	public int indexScoreEnemy = Constants.INDEXSCORETENEMIES;
 
 	// Use this for initialization
 	void Start () {

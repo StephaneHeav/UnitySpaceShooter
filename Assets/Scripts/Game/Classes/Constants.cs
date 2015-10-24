@@ -34,10 +34,12 @@ public static class Constants {
 	public const int SHIP1 = 0;
 	public const int SHIP2 = 1;
 	public const int MAXSHIP = 2;
-	
-	public const int INDEXSCORETENEMIES = 0;
-	public const int INDEXSCORETLORES = 1;
-	public const int INDEXSCORETSHOT = 2;
+
+	public const int INDEXSCORETLORES = 0;
+	public const int INDEXSCORETSHOT = 1;
+	public const int INDEXSCORETENEMIES = 2;
+	public const int INDEXSCORETSPECIALFORCE = 3;
+	public const int INDEXSCORETBOSSES = 4;
 	public const int INDEXSCORESSHOT = 0;
 	public const int INDEXSCORESBOMB = 1;
 	public const int INDEXSCORESSW = 2;
