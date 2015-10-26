@@ -101,7 +101,7 @@ public class HazardsController : MonoBehaviour {
 
 		while (gameController.gameState != Constants.GAMEOVER) {
 			
-			yield return new WaitForSeconds(20f);
+			yield return new WaitForSeconds(30f);
 
 			currManoeuvre = manoeuvresSpecialForce[Random.Range (0, manoeuvresSpecialForce.Count)];
 			currManoeuvre.StartManoeuvre ();
@@ -114,8 +114,10 @@ public class HazardsController : MonoBehaviour {
 					specialMover.SetTrajectory (currFormation.formation[i].GetClone());
 					enemyAction = hazardObject.GetComponent<EnemyAction> ();
 					enemyAction.SetComplexeAction(selectedTCA);
+					yield break;
 				}
 				
+				yield break;
 				yield return new WaitForSeconds(currFormation.timer * setupDiff.coefWaitFormation);
 			}
 		}

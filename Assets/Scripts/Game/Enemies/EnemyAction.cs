@@ -59,10 +59,10 @@ public class EnemyAction : MonoBehaviour {
 				lastManoeuvre = PatternFactory.CirclePattern (16, 1, 0.1f, transform.position);
 				break;
 			case 3:
-				lastManoeuvre = PatternFactory.HalfCirclePattern (16, 5, 1f, transform.position, playerShip.transform.position);
+				lastManoeuvre = PatternFactory.HalfCirclePattern (16, 1, 1f, transform.position, playerShip.transform.position);
 				break;
 			default:
-				lastManoeuvre = PatternFactory.QuarterCirclePattern (16, 5, 1f, transform.position, playerShip.transform.position);
+				lastManoeuvre = PatternFactory.QuarterCirclePattern (16, 1, 1f, transform.position, playerShip.transform.position);
 				break;
 			}
 			lastManoeuvre.StartManoeuvre ();
