@@ -5,6 +5,7 @@ public class ActiveByBoundary : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		switch (other.tag) {
 		case "Player":
+			break;
 		case "Enemies":
 			Ship shipScript = other.GetComponent<Ship> ();
 			shipScript.ActivateState ();

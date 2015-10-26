@@ -52,9 +52,9 @@ public class HazardsController : MonoBehaviour {
 	}
 
 	public void StartHazards () {
-		StartCoroutine(SpawnWavesRandom(Quaternion.identity, asteroidsOrdered[setupDiff.indexAsteroids], manoeuvresLore));
-		StartCoroutine(SpawnWavesRandom(Quaternion.Euler(0, 180, 0), enemies[0], manoeuvresEnemie));
-		StartCoroutine(SpawnSpecialForce());
+		//StartCoroutine(SpawnWavesRandom(Quaternion.identity, asteroidsOrdered[setupDiff.indexAsteroids], manoeuvresLore));
+		//StartCoroutine(SpawnWavesRandom(Quaternion.Euler(0, 180, 0), enemies[0], manoeuvresEnemie));
+		//StartCoroutine(SpawnSpecialForce());
 	}
 	
 	IEnumerator SpawnWavesRandom (Quaternion spawnRotation, GameObject gameObj, List<Manoeuvre> manoeuvresList) {
@@ -114,10 +114,8 @@ public class HazardsController : MonoBehaviour {
 					specialMover.SetTrajectory (currFormation.formation[i].GetClone());
 					enemyAction = hazardObject.GetComponent<EnemyAction> ();
 					enemyAction.SetComplexeAction(selectedTCA);
-					yield break;
 				}
-				
-				yield break;
+
 				yield return new WaitForSeconds(currFormation.timer * setupDiff.coefWaitFormation);
 			}
 		}

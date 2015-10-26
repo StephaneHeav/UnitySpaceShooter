@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyAction : MonoBehaviour {
 	public int typeIAAction = 0;
@@ -25,6 +26,9 @@ public class EnemyAction : MonoBehaviour {
 		switch (typeIAAction) {
 		case 1:
 			//nothing
+			break;
+		case 2:
+			StartCoroutine(complexeAction(0f, 0));
 			break;
 		default:
 			StartCoroutine(simpleAction());
@@ -51,19 +55,31 @@ public class EnemyAction : MonoBehaviour {
 
 		yield return new WaitForSeconds(delay);
 		while (true) {
+			playerShip = GameObject.FindGameObjectWithTag ("Player");
+
+			if (playerShip == null) {
+				yield return new WaitForSeconds (1f);
+
+				continue;
+			}
+
 			switch (typeCA) {
 			case 1:
-				lastManoeuvre = PatternFactory.SpiralPattern (16, 1, 0.1f, transform.position);
+				lastManoeuvre = PatternFactory.SpiralPattern (32, 1, 0.01f, transform.position);
 				break;
 			case 2:
-				lastManoeuvre = PatternFactory.CirclePattern (16, 1, 0.1f, transform.position);
+				lastManoeuvre = PatternFactory.CirclePattern (32, 1, 0.1f, transform.position);
 				break;
 			case 3:
-				lastManoeuvre = PatternFactory.HalfCirclePattern (16, 1, 1f, transform.position, playerShip.transform.position);
+				lastManoeuvre = PatternFactory.HalfCirclePattern (32, 1, 1f, transform.position, playerShip.transform.position);
 				break;
 			default:
-				lastManoeuvre = PatternFactory.QuarterCirclePattern (16, 1, 1f, transform.position, playerShip.transform.position);
+				lastManoeuvre = PatternFactory.QuarterCirclePattern (32, 1, 1f, transform.position, playerShip.transform.position);
 				break;
+			}
+			++typeCA;
+			if (typeCA > 3) {
+				typeCA = 0;
 			}
 			lastManoeuvre.StartManoeuvre ();
 			
