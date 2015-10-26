@@ -28,7 +28,7 @@ public class EnemyAction : MonoBehaviour {
 			//nothing
 			break;
 		case 2:
-			StartCoroutine(complexeAction(0f, 0));
+			StartCoroutine(SimulatorAction());
 			break;
 		default:
 			StartCoroutine(simpleAction());
@@ -57,12 +57,55 @@ public class EnemyAction : MonoBehaviour {
 		while (true) {
 			playerShip = GameObject.FindGameObjectWithTag ("Player");
 
+			switch (typeCA) {
+			case 1:
+				lastManoeuvre = PatternFactory.SpiralPattern (32, 1, 0.01f, transform.position);
+				break;
+			case 2:
+				lastManoeuvre = PatternFactory.CirclePattern (32, 1, 0.1f, transform.position);
+				break;
+			case 3:
+				lastManoeuvre = PatternFactory.HalfCirclePattern (32, 1, 1f, transform.position, playerShip.transform.position);
+				break;
+			default:
+				lastManoeuvre = PatternFactory.QuarterCirclePattern (32, 1, 1f, transform.position, playerShip.transform.position);
+				break;
+			}
+			lastManoeuvre.StartManoeuvre ();
+			
+			while( (currFormation = lastManoeuvre.GetNextFormation()) != null && currFormation.formation != null) {
+				i = 0;
+				len = currFormation.formation.Length;
+				
+				for (; i < len; ++i) {
+					GameObject shot = arsenal.Fire (transform, fireType, gameObject.tag);
+					SpecialMover spScrip = shot.GetComponent<SpecialMover> ();
+					spScrip.SetTrajectory (currFormation.formation[i].GetClone());
+				}
+				
+				yield return new WaitForSeconds(currFormation.timer);
+			}
+			
+			yield return new WaitForSeconds (1f);
+		}
+	}
+	
+	IEnumerator SimulatorAction () {
+		Manoeuvre lastManoeuvre;
+		Formation currFormation;
+		int i, len, typeCA = 0;
+		float delay = 0f;
+		
+		yield return new WaitForSeconds(delay);
+		while (true) {
+			playerShip = GameObject.FindGameObjectWithTag ("Player");
+			
 			if (playerShip == null) {
 				yield return new WaitForSeconds (1f);
-
+				
 				continue;
 			}
-
+			
 			switch (typeCA) {
 			case 1:
 				lastManoeuvre = PatternFactory.SpiralPattern (32, 1, 0.01f, transform.position);

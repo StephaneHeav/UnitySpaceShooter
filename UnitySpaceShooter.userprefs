@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Enemies\EnemyAction.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Controller\HazardsController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Game\Controller\HazardsController.cs" Line="3" Column="34" />
-      <File FileName="Assets\Scripts\Game\Enemies\EnemyAction.cs" Line="7" Column="30" />
+      <File FileName="Assets\Scripts\Game\Controller\HazardsController.cs" Line="43" Column="51" />
       <File FileName="Assets\Scripts\Game\Events\ActiveByBoundary.cs" Line="8" Column="10" />
+      <File FileName="Assets\Scripts\Game\Enemies\EnemyAction.cs" Line="122" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
