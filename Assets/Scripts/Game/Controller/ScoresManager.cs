@@ -12,7 +12,7 @@ public class ScoresManager : MonoBehaviour {
 		dataController = dataControllerObject.GetComponent<DataController> ();
 
 		options = new GUILayoutOption[] {
-			GUILayout.Width(250),
+			GUILayout.Width(200),
 			GUILayout.Height(50)
 		};
 
@@ -22,7 +22,7 @@ public class ScoresManager : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		GUILayout.BeginArea (new Rect (250,100, 400,300));
+		GUILayout.BeginArea (new Rect (50, 150, 400,300));
 		ScoreObject[] scores = dataController.GetScores ();
 		int i = 0, len = (int) scores.Length/2;
 		string text = "";

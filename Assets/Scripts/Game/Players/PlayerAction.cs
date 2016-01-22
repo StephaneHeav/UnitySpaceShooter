@@ -52,7 +52,7 @@ public class PlayerAction : MonoBehaviour {
 
 	void Update () {
 		if (Time.timeScale == 1) {
-			int i = fireLevel - 1;
+			int i = fireLevel;
 			i = (i > numberOfSpawn) ? numberOfSpawn : i;
 
 			if (Input.GetKey(dataController.GetKeyInput(Constants.KEYMAINATTACK))) {

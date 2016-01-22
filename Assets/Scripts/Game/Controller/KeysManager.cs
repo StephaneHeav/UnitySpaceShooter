@@ -19,7 +19,7 @@ public class KeysManager : MonoBehaviour {
 		inputManager = dataController.GetInputManager ();
 
 		options = new GUILayoutOption[] {
-			GUILayout.Width(150),
+			GUILayout.Width(175),
 			GUILayout.Height(30)
 		};
 		
@@ -33,7 +33,7 @@ public class KeysManager : MonoBehaviour {
 		Event e = Event.current;
 
 		if (inputManager != null) {
-			GUILayout.BeginArea (new Rect (325,160,300,400));
+			GUILayout.BeginArea (new Rect (30,160,400,400));
 			int i = 0;
 			for(; i < inputManager.Count; ++i) {
 				GUILayout.BeginHorizontal();
